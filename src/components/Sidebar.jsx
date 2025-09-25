@@ -1,94 +1,90 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import "./Sidebar.css";
 
 const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const closeSidebar = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
-      <aside className="sidebar">
+      {/* Toggle button cho mobile - ẩn khi sidebar mở */}
+      <button 
+        className={`sidebar-toggle ${isOpen ? 'hidden' : ''}`}
+        onClick={toggleSidebar}
+        aria-label="Toggle sidebar"
+      >
+        <i className="fas fa-bars"></i>
+      </button>
+
+      {/* Overlay để đóng sidebar khi click bên ngoài */}
+      {isOpen && <div className="sidebar-overlay" onClick={closeSidebar}></div>}
+
+      <aside className={`sidebar ${isOpen ? 'show' : ''}`}>
         <div className="sidebar-brand">
           <span>Admin Dashboard</span>
         </div>
         <ul className="sidebar-nav">
           <li>
-            <a href="/" className="active">
+            <Link 
+              to="/" 
+              className={location.pathname === "/" ? "active" : ""}
+              onClick={closeSidebar}
+            >
               <i className="fas fa-home"></i>
               <span>Dashboard</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/customers">
+            <Link 
+              to="/customers" 
+              className={location.pathname === "/customers" ? "active" : ""}
+              onClick={closeSidebar}
+            >
               <i className="fas fa-users"></i>
               <span>Danh sách khách mời</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/tickets">
+            <Link 
+              to="/tickets"
+              className={location.pathname === "/tickets" ? "active" : ""}
+              onClick={closeSidebar}
+            >
               <i className="fa-solid fa-clock"></i>
               <span>Tạo vé</span>
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="/events">
+            <Link 
+              to="/events"
+              className={location.pathname === "/events" ? "active" : ""}
+              onClick={closeSidebar}
+            >
               <i className="fas fa-calendar-alt"></i>
               <span>Sự kiện</span>
-            </a>
+            </Link>
           </li>
-            <li>
-            <a href="/checkin">
-                <i className="fa-solid fa-qrcode"></i>          
-                <span>Check-in</span>
-            </a>
-            </li>
+          <li>
+            <Link 
+              to="/checkin"
+              className={location.pathname === "/checkin" ? "active" : ""}
+              onClick={closeSidebar}
+            >
+              <i className="fa-solid fa-qrcode"></i>          
+              <span>Check-in</span>
+            </Link>
+          </li>
         </ul>
       </aside>
-
-      {/* CSS nhúng vào component */}
-      <style>{`
-        .sidebar {
-          width: 220px;
-          background: #2c3e50;
-          color: #fff;
-          height: 100vh;
-          position: fixed;
-          left: 0;
-          top: 0;
-          padding: 15px 0;
-        }
-
-        .sidebar-brand {
-          font-size: 18px;
-          font-weight: bold;
-          text-align: center;
-          margin-bottom: 20px;
-        }
-
-        .sidebar-nav {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .sidebar-nav li {
-          margin: 10px 0;
-        }
-
-        .sidebar-nav a {
-          color: #fff;
-          text-decoration: none;
-          display: flex;
-          align-items: center;
-          padding: 8px 15px;
-        }
-
-        .sidebar-nav a.active,
-        .sidebar-nav a:hover {
-          background: #34495e;
-          border-radius: 4px;
-        }
-
-        .sidebar-nav i {
-          margin-right: 10px;
-        }
-      `}</style>
     </>
   );
 };

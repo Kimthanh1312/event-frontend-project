@@ -1,26 +1,63 @@
+/* Footer cố định ở bottom */
 .footer {
   height: 50px;
-  background: #f8f9fa;
-  border-top: 1px solid #ddd;
+  background: #ffffff;
+  border-top: 1px solid #e9ecef;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
-  position: fixed;
+  /* position: fixed; */
   bottom: 0;
-  left: 220px; 
+  left: 220px; /* chừa chỗ cho sidebar */
   right: 0;
-  z-index: 1000;
+  /* z-index: 1000; */
   font-size: 14px;
   color: #555;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+  transition: left 0.3s ease;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
 }
 
 .footer-links a {
   margin-left: 15px;
   text-decoration: none;
   color: #007bff;
+  font-size: 14px;
+  transition: color 0.3s ease;
 }
 
 .footer-links a:hover {
+  color: #0056b3;
   text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer {
+    left: 0; /* full width khi sidebar ẩn */
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    padding: 0 15px;
+    font-size: 12px;
+    flex-direction: column;
+    height: 60px;
+    justify-content: center;
+  }
+  
+  .footer-links {
+    margin-top: 5px;
+  }
+  
+  .footer-links a {
+    margin: 0 10px;
+    font-size: 12px;
+  }
 }

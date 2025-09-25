@@ -1,18 +1,46 @@
+/* Layout chính */
 .layout {
   display: flex;
+  min-height: 100vh;
 }
 
+/* Nội dung chính bên phải sidebar */
 .main-content {
-  margin-left: 220px; /* chừa chỗ cho sidebar */
+  margin-left: 220px; /* chừa chỗ cho sidebar cố định */
   width: calc(100% - 220px);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: margin-left 0.3s ease;
 }
 
+/* Nội dung động */
 .content {
   flex: 1;
   padding: 20px;
-  margin-top: 60px;   /* chừa chỗ cho header */
-  margin-bottom: 50px; /* chừa chỗ cho footer */
+  margin-top: 60px;   /* chừa chỗ cho header cố định */
+  margin-bottom: 50px; /* chừa chỗ cho footer cố định */
+  overflow-x: auto;
+  background-color: #f8f9fa;
+}
+
+/* Responsive cho tablet và mobile */
+@media (max-width: 992px) {
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+  
+  .content {
+    margin-top: 60px;
+    padding: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content {
+    padding: 10px;
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
 }

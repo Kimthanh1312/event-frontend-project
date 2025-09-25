@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -8,9 +9,9 @@ const Footer = () => {
           &copy; 2025 Admin Dashboard. All rights reserved.
         </div>
         <div className="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Help</a>
+          <Link href="#">Privacy Policy</Link>
+          <Link href="#">Terms of Service</Link>
+          <Link href="#">Help</Link>
         </div>
       </footer>
 
@@ -24,7 +25,6 @@ const Footer = () => {
           justify-content: space-between;
           align-items: center;
           padding: 0 20px;
-          position: fixed;
           bottom: 0;
           left: 220px; /* chừa chỗ cho sidebar */
           right: 0;

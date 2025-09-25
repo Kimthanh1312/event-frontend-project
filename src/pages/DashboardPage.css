@@ -1,19 +1,11 @@
 /* ==========================
-   Container chính tránh sidebar
+   Container chính - không cần margin vì đã có Layout
    ========================== */
 .dashboard-container {
   padding: 20px;
-  padding-left: 250px; /* chừa chỗ cho sidebar cố định */
   box-sizing: border-box;
-  min-height: 100vh;
-  overflow-x: hidden;
-  background-color: #f5f5f5;
-  transition: padding-left 0.3s;
-}
-
-/* Khi sidebar thu gọn */
-.sidebar-collapsed + .dashboard-container {
-  padding-left: 80px;
+  min-height: calc(100vh - 110px); /* trừ header và footer */
+  background-color: #f8f9fa;
 }
 
 /* ==========================
@@ -23,6 +15,7 @@
   font-size: 2rem;
   margin-bottom: 20px;
   font-weight: 600;
+  color: #2c3e50;
 }
 
 /* ==========================
@@ -42,6 +35,12 @@
   padding: 20px;
   flex: 1 1 calc(20% - 20px);
   min-width: 200px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .card-header {
@@ -53,16 +52,19 @@
 
 .card-title {
   font-weight: 600;
+  color: #495057;
 }
 
 .card-value {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 5px;
+  color: #2c3e50;
 }
 
 .card-desc {
   color: #6c757d;
+  font-size: 0.9rem;
 }
 
 /* ==========================
@@ -79,6 +81,10 @@
   flex: 1 1 45%;
   position: relative;
   height: 400px;
+  background: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 20px;
 }
 
 canvas {
@@ -93,7 +99,7 @@ canvas {
   overflow-x: auto;
   background-color: #fff;
   border-radius: 10px;
-  padding: 10px;
+  padding: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
@@ -108,21 +114,26 @@ th, td {
   border-bottom: 1px solid #ddd;
 }
 
+th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #495057;
+}
+
 /* ==========================
    Status badges
    ========================== */
-.status.completed { color: #1cc88a; }
-.status.ongoing { color: #f6c23e; }
-.status.upcoming { color: #4e73df; }
-.status.cancelled { color: #e74a3b; }
+.status.completed { color: #28a745; }
+.status.ongoing { color: #ffc107; }
+.status.upcoming { color: #007bff; }
+.status.cancelled { color: #dc3545; }
 
 /* ==========================
    Responsive
    ========================== */
 @media (max-width: 992px) {
   .dashboard-container {
-    padding-left: 15px; /* sidebar ẩn */
-    padding-right: 15px;
+    padding: 15px;
   }
 
   .chart-container {
@@ -140,11 +151,25 @@ th, td {
 }
 
 @media (max-width: 576px) {
+  .dashboard-container {
+    padding: 10px;
+  }
+
+  .page-title {
+    font-size: 1.5rem;
+  }
+
   th, td {
     font-size: 0.85rem;
+    padding: 8px;
   }
 
   .card-value {
     font-size: 1.25rem;
+  }
+  
+  .chart-container {
+    height: 250px;
+    padding: 15px;
   }
 }
