@@ -1,0 +1,57 @@
+.header {
+  height: 60px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  left: 220px; 
+  right: 0;
+  z-index: 1000;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 5px 10px;
+}
+
+.search-bar i {
+  color: #666;
+  margin-right: 8px;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+.user-menu {
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.user-info img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin-right: 8px;
+}
+
+.user-name {
+  font-weight: 500;
+  color: #333;
+}

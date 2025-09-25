@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Sidebar from "./components/Sidebar";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+import DashboardPage from "./pages/DashboardPage";
+import CustomersPage from "./pages/CustomersPage";
+import TicketsPage from "./pages/TicketsPage";
+import EventsPage from "./pages/EventsPage";
+import CheckinPage from "./pages/CheckinPage"; 
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="d-flex">
+        {/* Sidebar bên trái */}
+        <Sidebar />
+
+        {/* Nội dung chính bên phải */}
+        <div className="flex-grow-1 d-flex flex-column">
+          <Header />
+
+          {/* Nội dung động */}
+          <main className="flex-grow-1 p-4">
+            <Routes>
+              <Route path="/" element={<DashboardPage />} />
+              <Route path="/customers" element={<CustomersPage />} />
+              <Route path="/tickets" element={<TicketsPage />} />
+              <Route path="/events" element={<EventsPage />} />
+              <Route path="/checkin" element={<CheckinPage />} />
+            </Routes>
+          </main>
+
+          <Footer />
+        </div>
+      </div>
+    </Router>
   );
 }
 

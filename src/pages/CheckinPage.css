@@ -1,0 +1,86 @@
+/* ==========================
+   Toàn bộ nội dung tránh sidebar
+   ========================== */
+.container-fluid {
+  margin-left: 250px; /* chiều rộng sidebar mặc định */
+  padding: 20px;
+  box-sizing: border-box;
+  transition: margin-left 0.3s;
+}
+
+/* Khi sidebar thu gọn (có thể thêm class .sidebar-collapsed vào body) */
+.sidebar-collapsed + .container-fluid {
+  margin-left: 80px; /* chiều rộng sidebar khi thu gọn */
+}
+
+/* ==========================
+   Video camera
+   ========================== */
+video {
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  display: block; /* tránh inline spacing */
+  border-radius: 6px;
+}
+
+/* ==========================
+   Kết quả scan
+   ========================== */
+#result {
+  margin-top: 1rem;
+}
+
+/* ==========================
+   Nhập mã thủ công
+   ========================== */
+.input-manual {
+  margin-top: 1rem;
+}
+
+.input-manual .form-control {
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================
+   Danh sách khách đã check-in
+   ========================== */
+.table-container {
+  margin-top: 3rem;
+  overflow-x: auto;
+}
+
+.table-container .table {
+  width: 100%;
+  border: 1px solid #dee2e6;
+  border-collapse: collapse;
+}
+
+.table-container .badge {
+  font-size: 0.85rem;
+}
+
+.btn-sm {
+  margin-right: 0.25rem;
+}
+
+/* ==========================
+   Responsive
+   ========================== */
+@media (max-width: 992px) {
+  .container-fluid {
+    margin-left: 0; 
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  video {
+    max-width: 100%;
+  }
+
+  .table-container table {
+    font-size: 0.85rem;
+  }
+}

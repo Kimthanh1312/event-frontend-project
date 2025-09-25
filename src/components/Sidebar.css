@@ -1,0 +1,61 @@
+/* CheckinPage.css */
+.checkin-page {
+  margin-left: 220px; /* bằng width của sidebar */
+  padding: 1rem;
+}
+
+/* Video camera */
+video {
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+}
+
+/* Kết quả scan */
+#result {
+  margin-top: 1rem;
+}
+
+/* Nhập mã thủ công */
+.input-manual {
+  margin-top: 1rem;
+}
+
+.input-manual .form-control {
+  margin-bottom: 0.5rem;
+}
+
+/* Danh sách khách đã check-in */
+.table-container {
+  margin-top: 3rem;
+}
+
+.table-container .table {
+  border: 1px solid #dee2e6;
+}
+
+.table-container .badge {
+  font-size: 0.9rem;
+}
+
+.btn-sm {
+  margin-right: 0.25rem;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .checkin-page {
+    margin-left: 0;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  video {
+    max-width: 100%;
+  }
+
+  .table-container table {
+    font-size: 0.9rem;
+  }
+}

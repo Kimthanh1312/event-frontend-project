@@ -1,0 +1,47 @@
+/* Events.css */
+
+/* Tiêu đề page */
+.page-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Card header */
+.card-header {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Filters */
+.card .form-label {
+  font-weight: 500;
+}
+
+.card .form-control,
+.card .form-select {
+  border-radius: 0.375rem;
+}
+
+/* Table */
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+.table td .badge {
+  font-size: 0.8rem;
+  margin-right: 0.25rem;
+}
+
+/* Modal */
+.modal-lg {
+  max-width: 900px;
+}
+
+/* Responsive nhỏ */
+@media (max-width: 576px) {
+  .table-responsive {
+    overflow-x: auto;
+  }
+}

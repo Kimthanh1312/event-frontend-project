@@ -1,0 +1,45 @@
+/* CustomersPage.css */
+
+/* Tiêu đề page */
+.page-title {
+  margin-bottom: 1.5rem;
+  color: #0d6efd;
+  display: flex;
+  align-items: center;
+}
+
+.page-title i {
+  margin-right: 0.5rem;
+}
+
+/* Card */
+.card {
+  border-radius: 0.5rem;
+}
+
+/* Table */
+.table th,
+.table td {
+  vertical-align: middle;
+}
+
+/* Hành động */
+.table td .btn {
+  margin-bottom: 0.25rem;
+}
+
+/* Badge trạng thái */
+.badge {
+  font-size: 0.9rem;
+}
+
+/* Responsive nhỏ */
+@media (max-width: 576px) {
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table td .btn {
+    font-size: 0.75rem;
+  }
+}

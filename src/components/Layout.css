@@ -1,0 +1,18 @@
+.layout {
+  display: flex;
+}
+
+.main-content {
+  margin-left: 220px; /* chừa chỗ cho sidebar */
+  width: calc(100% - 220px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  margin-top: 60px;   /* chừa chỗ cho header */
+  margin-bottom: 50px; /* chừa chỗ cho footer */
+}

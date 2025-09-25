@@ -1,0 +1,66 @@
+.page-title {
+  color: #2c3e50;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #ecf0f1;
+}
+.card {
+  border-radius: 10px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  margin-bottom: 2rem;
+  border: none;
+}
+.card-header {
+  border-radius: 10px 10px 0 0 !important;
+  font-weight: bold;
+}
+.ticket {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.ticket:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 90%;
+  background: #f8f9fa;
+  border-radius: 0 10px 10px 0;
+}
+.ticket:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 90%;
+  background: #f8f9fa;
+  border-radius: 10px 0 0 10px;
+}
+.perforation {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 90%;
+  width: 15px;
+  background: radial-gradient(circle at center, #f8f9fa 30%, transparent 30%);
+  background-size: 10px 20px;
+}
+.perforation-right {
+  left: auto;
+  right: 0;
+}
+.guest-info {
+  font-size: 1.1rem;
+}
+.info-label {
+  font-weight: bold;
+  color: #2c3e50;
+}
